@@ -1,4 +1,0 @@
-Building DAG of jobs...
-WorkflowError:
-Failed to open source file /n/groups/marks/users/courtney/snakemake_tricks/all_example/courtney_py38
-FileNotFoundError: [Errno 2] No such file or directory: '/n/groups/marks/users/courtney/snakemake_tricks/all_example/courtney_py38'

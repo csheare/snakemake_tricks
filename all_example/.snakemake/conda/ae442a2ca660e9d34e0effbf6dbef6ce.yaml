@@ -1,8 +1,0 @@
-name: new-env
-channels:
-  - http://conda.anaconda.org/gurobi
-  - defaults
-  - conda-forge
-  - bioconda
-prefix: /home/cos262/.conda/envs/new-env
-
