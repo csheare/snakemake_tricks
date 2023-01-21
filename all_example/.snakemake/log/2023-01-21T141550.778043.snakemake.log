@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+test         1              1              1
+total        1              1              1
+
+Select jobs to execute...
+
+[Sat Jan 21 14:15:55 2023]
+localrule test:
+    input: courtney_input.txt
+    output: courtney_output.txt
+    jobid: 0
+    resources: tmpdir=/tmp
+
+
+			source activate /n/groups/marks/software/anaconda_o2/envs/courtney_master
+			python test.py -dataset courtney
+		
+[Sat Jan 21 14:15:55 2023]
+Error in rule test:
+    jobid: 0
+    output: courtney_output.txt
+    shell:
+        
+			source activate /n/groups/marks/software/anaconda_o2/envs/courtney_master
+			python test.py -dataset courtney
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Terminating processes on user request, this might take some time.
+Will exit after finishing currently running jobs.
+Cancelling snakemake on user request.

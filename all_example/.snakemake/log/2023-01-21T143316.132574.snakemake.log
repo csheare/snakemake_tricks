@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WorkflowError:
+Failed to open source file /home/cos262/.conda/envs/new-env
+FileNotFoundError: [Errno 2] No such file or directory: '/home/cos262/.conda/envs/new-env'

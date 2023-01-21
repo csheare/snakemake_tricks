@@ -1,0 +1,11 @@
+prefix=/n/groups/marks/users/courtney/snakemake_tricks/all_example/.snakemake/conda/e0fb5e47
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+toolexeclibdir=${libdir}
+includedir=/n/groups/marks/users/courtney/snakemake_tricks/all_example/.snakemake/conda/e0fb5e47/include
+
+Name: libffi
+Description: Library supporting Foreign Function Interfaces
+Version: 3.4.2
+Libs: -L${toolexeclibdir} -lffi
+Cflags: -I${includedir}

@@ -1,0 +1,13 @@
+prefix=/n/groups/marks/users/courtney/snakemake_tricks/all_example/.snakemake/conda/e0fb5e47
+exec_prefix=/n/groups/marks/users/courtney/snakemake_tricks/all_example/.snakemake/conda/e0fb5e47
+libdir=/n/groups/marks/users/courtney/snakemake_tricks/all_example/.snakemake/conda/e0fb5e47/lib
+sharedlibdir=/n/groups/marks/users/courtney/snakemake_tricks/all_example/.snakemake/conda/e0fb5e47/lib
+includedir=/n/groups/marks/users/courtney/snakemake_tricks/all_example/.snakemake/conda/e0fb5e47/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

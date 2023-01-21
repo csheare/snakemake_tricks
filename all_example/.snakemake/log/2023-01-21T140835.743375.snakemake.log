@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job stats:
+job      count    min threads    max threads
+-----  -------  -------------  -------------
+test         1              1              1
+total        1              1              1
+
+Select jobs to execute...
+
+[Sat Jan 21 14:08:41 2023]
+localrule test:
+    input: courtney_input.txt
+    output: courtney_output.txt
+    jobid: 0
+    resources: tmpdir=/tmp
+
+
+			source activate courtney_master
+			python test.py -dataset courtney
+		
+[Sat Jan 21 14:08:42 2023]
+Error in rule test:
+    jobid: 0
+    output: courtney_output.txt
+    shell:
+        
+			source activate courtney_master
+			python test.py -dataset courtney
+		
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /n/groups/marks/users/courtney/snakemake_tricks/all_example/.snakemake/log/2023-01-21T140835.743375.snakemake.log
