@@ -10,10 +10,13 @@ input_files = glob.glob('data_input/*')
 
 output_files = []
 for file in input_files:
-	output = file.replace('_input.txt', '_output.txt')
+	output = file.replace('input', 'output')
 	output_files.append(f'{output}') 
 
-localrules: all
+#localrules: all
+rule clean:
+	shell:
+		"rm -f {output_files} combo.txt"
 
 rule all:
 	input:
@@ -23,12 +26,12 @@ rule test:
 	input:
 		'data_input/{filename}_input.txt'
 	output:
-		'data_input/{filename}_output.txt'
+		'data_output/{filename}_output.txt'
 	conda:
 		"courtney_py38.yml"
 	shell:
 		"""
-			python test.py -file {input}
+			python3 test.py -file {input}
 		"""
 
 rule combo:
@@ -40,5 +43,5 @@ rule combo:
 		"courtney_py38.yml"
 	shell:
 		"""
-			python combo.py
+			python3 combine.py
 		"""

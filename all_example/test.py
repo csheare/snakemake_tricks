@@ -12,5 +12,5 @@ if __name__ == '__main__':
 
  
     output_file = args.file.replace('input', 'output')
-    with open(f'./{output_file}', 'w') as f:
-        f.write(f'{output} <> {output}')
+    with open('./{var}'.format(var=output_file), 'w') as f:
+        f.write('{var} <> {var}'.format(var=output))
