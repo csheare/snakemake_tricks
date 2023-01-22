@@ -3,14 +3,14 @@ import argparse
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description= "data")
-    parser.add_argument('-dataset', type=str, required=True)
+    parser.add_argument('-file', type=str, required=True)
     args = parser.parse_args()
 
     output = ''
-    with open(f'{args.dataset}_input.txt', 'r') as f:
+    with open(args.file, 'r') as f:
         output = f.readline()
 
-
-
-    with open(f'{args.dataset}_output.txt', 'w') as f:
-        f.write(output)
+ 
+    output_file = args.file.replace('input', 'output')
+    with open(f'./{output_file}', 'w') as f:
+        f.write(f'{output} <> {output}')

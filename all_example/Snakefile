@@ -4,19 +4,41 @@ import snakemake
 
 #snakemake.shell.prefix("set -eo pipefail;")
 
-# rule all:
-# 	"{dataset}_output.txt"
+import glob, sys
 
-localrules: test
+input_files = glob.glob('data_input/*')
+
+output_files = []
+for file in input_files:
+	output = file.replace('_input.txt', '_output.txt')
+	output_files.append(f'{output}') 
+
+localrules: all
+
+rule all:
+	input:
+		'combo.txt'
 
 rule test:
 	input:
-		"courtney_input.txt"
+		'data_input/{filename}_input.txt'
 	output:
-		"courtney_output.txt"
+		'data_input/{filename}_output.txt'
 	conda:
 		"courtney_py38.yml"
 	shell:
 		"""
-			python test.py -dataset courtney
+			python test.py -file {input}
+		"""
+
+rule combo:
+	input:
+		output_files
+	output:
+		'combo.txt'
+	conda:
+		"courtney_py38.yml"
+	shell:
+		"""
+			python combo.py
 		"""
